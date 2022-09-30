@@ -1,0 +1,37 @@
+from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
+
+
+class Customer(models.Model):
+    last_name = models.CharField(
+        verbose_name="Фамилия",
+        help_text="Введите фамилию",
+        max_length=30,
+    )
+    first_name = models.CharField(
+        verbose_name="Имя",
+        help_text="Введите имя",
+        max_length=30,
+    )
+    patronymic = models.CharField(
+        verbose_name="Отчество",
+        help_text="Введите отчество (при наличии)",
+        max_length=30,
+        null=True,
+        blank=True,
+    )
+    phone_number = PhoneNumberField(
+        verbose_name="Мобильный телефон клиента",
+        help_text="Введите ваш мобильный телефон для связи",
+    )
+    email = models.EmailField(
+        verbose_name='Электронная почта клиента',
+        help_text="Введите вашу почту для заявки",
+    )
+
+    class Meta:
+        verbose_name = "Клиент"
+        verbose_name_plural = "Клиенты"
+
+    def __str__(self):
+        return f'{self.last_name} {self.first_name} {self.patronymic} {self.pets}'

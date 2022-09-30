@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import *
+from .views import main_page
 
 urlpatterns = [
-    path('', redirect_agency),
+    path('', main_page),
     path('admin/', admin.site.urls),
-    path('agency/', include('agency.urls')),
+    path('managers/', include('managers.urls')),
+    path('animals/', include('animal.urls')),
+
 ]

@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import AddModelAnimal, OrderPhoto
 
-# Register your models here.
+
+admin.site.register(AddModelAnimal)
+admin.site.register(OrderPhoto)

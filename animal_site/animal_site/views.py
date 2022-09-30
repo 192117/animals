@@ -1,5 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import render
 
-
-def redirect_agency(request):
-    return redirect('agency_url', permanent=True)
+def main_page(request):
+    return render(request, 'base.html')
