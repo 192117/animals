@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'agency',
     'clients',
     'managers',
-    'animal'
+    'animal',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'animal_site.wsgi.application'
 
+AUTH_USER_MODEL = 'users.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

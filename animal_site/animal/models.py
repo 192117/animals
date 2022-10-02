@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from animal_site.utils import translite
 from clients.models import Customer
 
 class Animals(models.Model):
@@ -38,9 +40,22 @@ class Animals(models.Model):
         on_delete=models.CASCADE,
         related_name='pets',
     )
+    slug = models.SlugField(
+        max_length=150,
+        blank=True,
+        unique=True
+    )
     class Meta:
         verbose_name = "Питомец клуба"
         verbose_name_plural = "Питомцы клуба"
 
     def __str__(self):
         return f'{self.pets_name} {self.descriptions}'
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = translite(self.pets_name+self.color+str(self.owner))
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('animal_detail_url', kwargs={'slug': self.slug})

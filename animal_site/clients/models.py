@@ -34,4 +34,4 @@ class Customer(models.Model):
         verbose_name_plural = "Клиенты"
 
     def __str__(self):
-        return f'{self.last_name} {self.first_name} {self.patronymic} {self.pets}'
+        return f'{self.last_name} {self.first_name}'
