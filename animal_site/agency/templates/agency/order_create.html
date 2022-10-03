@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Order Create - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+    <form action="{% url 'photo_create_url' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                {% if field.errors %}
+                    <div class="alert alert-danger">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+                {{ field.label }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Отправить заявку на фотосессию</button>
+    </form>
+{% endblock %}

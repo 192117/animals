@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from animal_site.utils import translite
 from clients.models import Customer
+import random
 
 class Animals(models.Model):
     pets_name = models.CharField(
@@ -45,16 +46,24 @@ class Animals(models.Model):
         blank=True,
         unique=True
     )
+    rate = models.IntegerField(
+        default=0
+    )
     class Meta:
         verbose_name = "Питомец клуба"
         verbose_name_plural = "Питомцы клуба"
 
     def __str__(self):
-        return f'{self.pets_name} {self.descriptions}'
+        return f'{self.pets_name}'
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = translite(self.pets_name+self.color+str(self.owner))
+        while True:
+            try:
+                number = str(random.random()).split('.')[-1]
+                self.slug = translite(self.pets_name+'_'+number[:random.randrange(1, len(number))])
+                break
+            except Exception:
+                pass
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
