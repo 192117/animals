@@ -6,33 +6,36 @@
 
 
 {% block content %}
-    <h1 class="mb-5">
-        {{ animal.pets_name }}
-    </h1>
-    <div class="row">
-        <img src="{{ animal.photo.url }}" alt="{{ animal.pets_name }}" width="30" >
-        <a> Описание: {{animal.descriptions}} </a>
-        <div class="row mt-2">
-            <div class="col-6 col-sm-4"> Окрас: {{animal.color}} </div>
-            <div class="col-6 col-sm-4"> Вес: {{animal.weight}} </div>
-
-            <!-- Заставит следующие колонки перейти на следующую строку на брейкпойнте md и выше -->
-            <div class="w-100 d-none d-md-block"></div>
-
-            <div class="col-6 col-sm-4"> Заводчик: {{animal.owner}} </div>
-            <div class="col-6 col-sm-4"> Рост в холке: {{animal.height}} </div>
-        </div>
-        <div class="col-sm-3 mt-2"> Рейтинг:
+    <div class="container mt-5">
+        <div class="row">
+            <h1 class="mb-5">
+                {{ animal.pets_name }}
+            </h1>
             <div class="row">
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-outline-danger" id="answer_good-2"> + </button>
+                <img src="{{ animal.photo.url }}" alt="{{ animal.pets_name }}" width="30" >
+                <a> Описание: {{animal.descriptions}} </a>
+                <div class="row mt-2">
+                    <div class="col-6 col-sm-4"> Окрас: {{animal.color}} </div>
+                    <div class="col-6 col-sm-4"> Вес: {{animal.weight}} </div>
+
+                    <!-- Заставит следующие колонки перейти на следующую строку на брейкпойнте md и выше -->
+                    <div class="w-100 d-none d-md-block"></div>
+
+                    <div class="col-6 col-sm-4"> Заводчик: {{animal.owner}} </div>
+                    <div class="col-6 col-sm-4"> Рост в холке: {{animal.height}} </div>
                 </div>
-                <div class="col-sm-4 rating" id="buttonCountNumber2"> {{ animal.rate }}</div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-outline-danger" id="answer_bad-2"> - </button>
+                <div class="col-sm-3 mt-2"> Рейтинг:
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-outline-danger" id="answer_good-2"> + </button>
+                        </div>
+                        <div class="col-sm-4 rating" id="buttonCountNumber2"> {{ animal.rate }}</div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-outline-danger" id="answer_bad-2"> - </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}

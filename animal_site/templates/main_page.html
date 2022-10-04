@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+      Animal Agency
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            {% for animal in animals %}
+                {% include 'animal/includes/animal_card.html' %}
+            {% endfor %}
+            <div class="container">
+                <div class="row mt-1">
+                    <div class="col-md-6 text-center">
+                      <a class="btn btn-outline-success" href="{% url 'photo_create_url' %}" role="button">Заявка на фотоссесию</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <a class="btn btn-outline-success" href="{% url 'model_create_url' %}" role="button">Заявка на вступление в клуб</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

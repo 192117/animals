@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Информация о компании:
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-5">
+            История компании:
+        </h1>
+        <p> О КОМПАНИИ ПИШУ И ПИШУ, ПИШУ И ПИШУ!!!</p>
+        <h1 class="mb-5">
+            Команда:
+        </h1>
+        {% for manager in managers %}
+            {% include 'managers/includes/manager_card.html' %}
+        {% endfor %}
+        <h1 class="mb-5">
+            Клиенты:
+        </h1>
+        {% for client in clients %}
+            {% include 'managers/includes/client_card.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}

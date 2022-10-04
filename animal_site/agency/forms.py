@@ -23,8 +23,8 @@ class ModelForm(forms.ModelForm):
 
     class Meta:
         model = AddModelAnimal
-        fields = ['email', 'phone_number', 'last_name', 'first_name', 'pets_name', 'photo',
-                  'weight', 'height', 'color', 'descriptions']
+        fields = ['email', 'phone_number', 'last_name', 'first_name', 'pets_name',
+                  'weight', 'height', 'color', 'descriptions', 'photo']
         exclude = ('status',)
 
         widgets = {
@@ -34,7 +34,8 @@ class ModelForm(forms.ModelForm):
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'pets_name': forms.TextInput(attrs={'class': 'form-control'}),
             'color': forms.TextInput(attrs={'class': 'form-control'}),
-            'weight': forms.TextInput(attrs={'class': 'form-control'}),
-            'height': forms.TextInput(attrs={'class': 'form-control'}),
+            'weight': forms.NumberInput(attrs={'class': 'form-control'}),
+            'height': forms.NumberInput(attrs={'class': 'form-control'}),
             'descriptions': forms.Textarea(attrs={'class': 'form-control'}),
+            'photo': forms.FileInput(),
         }

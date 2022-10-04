@@ -28,6 +28,12 @@ class Customer(models.Model):
         verbose_name='Электронная почта клиента',
         help_text="Введите вашу почту для заявки",
     )
+    review = models.TextField(
+        verbose_name='Отзыв',
+        help_text='Введите отзыва',
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Клиент"

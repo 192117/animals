@@ -7,7 +7,7 @@
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>
         {% block title %}
-        Animal Agency
+            TITLE
         {% endblock %}
     </title>
 </head>
@@ -36,50 +36,9 @@
         </div>
     </div>
 </nav>
-<div class="container mt-5">
-    <div class="row">
-        {% block content %}
-            {% for animal in animals %}
-                {% include 'animal/includes/animal_card.html' %}
-            {% endfor %}
-        {% endblock %}
-
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-md-6 text-center">
-                  <a class="btn btn-outline-success" href="{% url 'photo_create_url' %}" role="button">Заявка на фотоссесию</a>
-                </div>
-                <div class="col-md-6 text-center">
-                  <a class="btn btn-outline-success" href="{% url 'model_create_url' %}" role="button">Заявка на вступление в клуб</a>
-                </div>
-            </div>
-        </div>
-
-        {% if is_paginated %}
-            <nav aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item {% if not prev_url %} disabled {% endif %}">
-                        <a class="page-link" href="{{ prev_url }}">Previous</a>
-                    </li>
-                    {% for n in page_object.paginator.page_range %}
-                        {% if page_object.number == n %}
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="?page={{ n }}">{{ n }}</a>
-                            </li>
-                        {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ n }}">{{ n }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    <li class="page-item {% if not next_url %} disabled {% endif %}">
-                        <a class="page-link" href="{{ next_url }}">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        {% endif %}
-    </div>
-</div>
+{% block content %}
+    CONTENT
+{% endblock %}
 
 
 <div class="container">
@@ -87,8 +46,8 @@
         <div class="container">
             <div class="row padding text-center">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">О нас</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Контакты</a></li>
+                    <li class="nav-item"><a href="{% url 'managers_list_url' %}" class="nav-link px-2 text-muted">О нас</a></li>
+                    <li class="nav-item"><a href="{% url 'contact_url' %}" class="nav-link px-2 text-muted">Контакты</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Политика конфиденциальности</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
                 </ul>
