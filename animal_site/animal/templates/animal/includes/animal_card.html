@@ -1,11 +1,9 @@
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">{{ animal.pets_name }}</h5>
-        <img src="{{ animal.photo.url }}" alt="{{ animal.pets_name }}" width="80" height="80">
-        <p class="card-text">{{ animal.descriptions|truncatewords:20 }}</p>
-        <a href="{{ animal.get_absolute_url }}" class="btn btn-light">Далее</a>
-    </div>
-    <div class="card-footer text-muted">
-        <a>  Окрас: {{ animal.color }}; Вес: {{ animal.weight }}; Рост в холке: {{ animal.height }} </a>
+{% load static %}
+<div class="col-lg-3 col-md-6">
+    <div class="single-cat-list">
+        <img src="{{animal.photo.url}}" alt="{{animal.pets_name}}" class="img-fluid" href="{% url 'animal_detail_url' %}">
+        <div class="overlay">
+            <div class="text">{{animal.pets_name}}</div>
+        </div>
     </div>
 </div>

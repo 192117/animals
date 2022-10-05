@@ -1,26 +1,263 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
-      Animal Agency
+    Animal Agency
 {% endblock %}
 
+{% block article %}
+	<h1 class="text-uppercase">
+		О нас
+	</h1>
+	<p class="text-white sub-head">
+		Мы лучшее агентство в своей категории.
+	</p>
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row">
-            {% for animal in animals %}
-                {% include 'animal/includes/animal_card.html' %}
-            {% endfor %}
-            <div class="container">
-                <div class="row mt-1">
-                    <div class="col-md-6 text-center">
-                        <a role="button" class="btn btn-success text-dark" style="background-color:#cefd81" href="{% url 'photo_create_url' %}">Заявка на фотоссесию</a>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <a role="button" class="btn btn-success text-dark" style="background-color:#cefd81" href="{% url 'model_create_url' %}">Заявка на вступление в клуб</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Start image-carusel Area -->
+	<section class="image-carusel-area">
+		<div class="container">
+			<div class="row">
+				<div class="active-image-carusel">
+					{% for animal in animals %}
+						{% include 'animal/includes/animal_photo.html' %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End image-carusel Area -->
+
+
+	<!-- Start callto-top Area -->
+	<section class="callto-top-area section-gap">
+		<div class="container">
+			<div class="row justify-content-between callto-top-wrap pt-40 pb-40">
+				<div class="col-lg-8 callto-top-left">
+					<h1>Хотите стать моделью у нас?</h1>
+				</div>
+				<div class="col-lg-4 callto-top-right">
+					<a href="{% url 'model_create_url' %}" class="primary-btn">Заполните форму</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End callto-top Area -->
+
+
+	<!-- Start home-about Area -->
+	<section class="home-about-area">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col-lg-6 home-about-left no-padding">
+					<img src="{% static 'page/img/about-img.jpg' %}" alt="">
+				</div>
+				<div class="col-lg-6 home-about-right no-padding">
+					<h1>
+						О том, как проходят сьемки для животного
+					</h1>
+					<h5>Сейчас расскажем о процессе</h5>
+					<p>
+						Процесс описан тут
+					</p>
+					<a href="#" class="primary-btn text-uppercase">Подробнее</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End home-about Area -->
+
+
+	<!-- Start process Area -->
+	<section class="process-area section-gap">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Процесс заказа сьемки</h1>
+						<p>Кто понимает ценность здоровья животного</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="single-process">
+						<span class="lnr lnr-thumbs-up"></span>
+							<h4>
+								Выбор животного
+							</h4>
+						</a>
+						<p>
+							Из каталога анкет выбираете нужные вам модели.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="single-process">
+						<span class="lnr lnr-license"></span>
+							<h4>
+								Заполняете форму
+							</h4>
+						</a>
+						<p>
+							Заполняете форму с указанием контактных данных и моделей, которые Вам необходимы, а также указываете концепт сьемки.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="single-process">
+						<span class="lnr lnr-user"></span>
+							<h4>
+								Обработка заявки
+							</h4>
+						</a>
+						<p>
+							Оператор изучает заявку, оценивает риски для животного, предлагает замену в случае занятости животного, выносит решение об одобрении или отказе.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="single-process">
+						<span class="lnr lnr-magic-wand"></span>
+							<h4>
+								Сьемка
+							</h4>
+						</a>
+						<p>
+							Сотрудники (с/без хозяина) прибывают на место сьемки, помогают Вам и обеспечивают спокойствие животного.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End process Area -->
+
+
+	<!-- Start testomial Area -->
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Отзывы наших клиентов</h1>
+						<p>Тех, кто однажды попробовал наши услуги и остался с нами навсегда</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="active-testimonial-carusel">
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t1.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t2.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t3.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t1.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t2.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t3.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t1.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t2.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+					<div class="single-testimonial item">
+						<img class="mx-auto" src="{% static 'page/img/t3.png' %}" alt="">
+						<p class="desc">
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware and more. laptop accessory
+						</p>
+						<h4>Mark Alviro Wiens</h4>
+						<p>
+							CEO at Google
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End testomial Area -->
+
+	<!-- Start calltoaction Area -->
+	<section class="calltoaction-area section-gap relative">
+		<div class="container">
+			<div class="overlay overlay-bg"></div>
+			<div class="row align-items-center justify-content-center">
+				<h1 class="text-white">Хотите сделать заказ на фотосьемку или присоединиться к нам?</h1>
+				<p class="text-white">
+					Обратитесь к нам по одной из следуюших кнопок:
+				</p>
+				<div class="buttons d-flex flex-row">
+					<a href="{% url 'photo_create_url' %}" class="primary-btn text-uppercase">Заказ фотосьемки</a>
+					<a href="{% url 'model_create_url' %}" class="primary-btn text-uppercase">Вступить в клуб</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End calltoaction Area -->
 {% endblock %}

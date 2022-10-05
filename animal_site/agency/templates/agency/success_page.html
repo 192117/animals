@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Success page - {{ block.super }}
+    Результаты заявки
+{% endblock %}
+
+{% block article %}
+    <h1 class="text-uppercase">
+		Результаты заявки
+	</h1>
 {% endblock %}
 
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        Ваша заявка отправленна, ожидайте результата на почте!
+<!-- Start callto-top Area -->
+<section class="callto-top-area section-gap">
+    <div class="container">
+        <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
+            <div class="col-lg-8 callto-top-left">
+                <h1>Ваша заявка отправленна, ожидайте результата на почте!</h1>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<!-- End callto-top Area -->
 {% endblock %}
