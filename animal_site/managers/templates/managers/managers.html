@@ -1,27 +1,79 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Информация о компании:
+    О компании
 {% endblock %}
 
+{% block article %}
+    <h1 class="text-uppercase">
+		О компании
+	</h1>
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h1 class="mb-5">
-            История компании:
-        </h1>
-        <p> О КОМПАНИИ ПИШУ И ПИШУ, ПИШУ И ПИШУ!!!</p>
-        <h1 class="mb-5">
-            Команда:
-        </h1>
-        {% for manager in managers %}
-            {% include 'managers/includes/manager_card.html' %}
-        {% endfor %}
-        <h1 class="mb-5">
-            Клиенты:
-        </h1>
-        {% for client in clients %}
-            {% include 'managers/includes/client_card.html' %}
-        {% endfor %}
-    </div>
+	<!-- Start company-top Area -->
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">История компании</h1>
+						<p>Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End company-top Area -->
+
+	<!-- Start managers Area -->
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Команда</h1>
+						<p>Те, кто работают для Вас</p>
+					</div>
+				</div>
+			</div>
+            <div class="row">
+				<div class="active-testimonial-carusel">
+					{% for manager in managers %}
+						{% include 'managers/includes/manager_card.html' %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End managers Area -->
+
+	<!-- Start clients Area -->
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Отзывы наших клиентов</h1>
+						<p>Тех, кто однажды попробовал наши услуги и остался с нами навсегда</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="active-testimonial-carusel">
+					{% for client in clients %}
+						{% include 'clients/includes/clients_card.html' %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End clients Area -->
 {% endblock %}

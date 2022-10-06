@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+FAQ
+{% endblock %}
+
+{% block article %}
+<h1 class="text-uppercase">
+    FAQ
+</h1>
+{% endblock %}
+
+{% block content %}
+<div class="faq ml-3 mt-5">
+
+    <ul class="mb-3">
+
+        <li class="mb-2">
+
+            <a href="#delivery-time">
+                Когда доставка десертов? Я могу заказать на определенное время в день заказа?
+            </a>
+        </li>
+        <li class="mb-2">
+            <a href="#composition">
+                Где посмотреть состав десертов?
+            </a>
+        </li>
+        <li class="mb-2">
+            <a href="#call-timeout">
+                Временами до вас не дозвониться, как поступить в таком случае?
+            </a>
+        </li>
+        <li class="mb-2">
+            <a href="#friend">
+                Что такое акция "Приведи друга" и как получить 300 бонусов?
+            </a>
+        </li>
+    </ul>
+
+    <div class="question badge mt-2 text-wrap p-3 position-relative" id="delivery-time">
+        <div class="triangle-bottom"></div>
+        <span class="question_text ">
+            Когда доставка десертов? Я могу заказать на определенное время в день заказа?
+        </span>
+    </div>
+
+    <div class="answer mt-3 mb-5 col-12 col-xl-8">
+        Заказы принимаются до&nbsp;21:00 по&nbsp;будням и&nbsp;до&nbsp;16:00 по&nbsp;выходным и&nbsp;праздничным дням с&nbsp;доставкой на&nbsp;следующий
+        день. Если заказ оформляется после 21:00 по&nbsp;будням или после 16:00 по&nbsp;выходным и&nbsp;праздникам&nbsp;— доставка через
+        день, либо любой другой день. Дату доставки и&nbsp;время доставки можно выбрать в&nbsp;корзине заказа. Доставка
+        осуществляется ТОЛЬКО в&nbsp;интервалы, которые можно выбрать в&nbsp;корзине заказа.
+    </div>
+
+    <div class="question badge text-wrap p-3 position-relative" id="composition">
+        <div class="triangle-bottom"></div>
+        <span class="question_text ">
+            Где посмотреть состав десертов?
+        </span>
+    </div>
+
+    <div class="answer mt-3 mb-5 col-12 col-xl-8">
+        В карточке товара под фото есть раздел «Состав», кликайте на него. Если состава по ссылке нет,
+        пришлите запрос на
+        <a href="mailto:info@cheese-cake.ru?subject=Вопрос по Составу">
+            <span style="color: red;">info@cheese-cake.ru</span>
+        </a>
+    </div>
+
+    <div class="question badge text-wrap p-3 position-relative" id="call-timeout">
+        <div class="triangle-bottom"></div>
+        <span class="question_text ">
+            Временами до вас не дозвониться, как поступить в таком случае?
+        </span>
+    </div>
+
+    <div class="answer mt-3 mb-5 col-12 col-xl-8">
+        В&nbsp;часы проведения акций и&nbsp;к&nbsp;праздничным дням бывает так, что наш колл-центр перегружен. Предлагаем оставить
+        запрос обратного звонка (рядом с&nbsp;номером телефона в&nbsp;шапке сайта), и&nbsp;мы&nbsp;сами свяжемся с&nbsp;Вами в&nbsp;ближайшее
+        время. Также, Вы&nbsp;можете воспользоваться чатом с&nbsp;оператором, кликнув на&nbsp;надпись в&nbsp;нижнем правом углу
+        браузера.
+    </div>
+
+    <div class="question badge text-wrap p-3 position-relative" id="friend">
+        <div class="triangle-bottom"></div>
+        <span class="question_text ">
+            Что такое акция "Приведи друга" и как получить 300 бонусов?
+        </span>
+    </div>
+
+    <div class="answer mt-3 mb-5 col-12 col-xl-8">
+        Приведите к нам друга по персональной ссылке и мы подарим по 300 бонусных рублей каждому из вас!
+        <ul>
+            <li>Зайдите в личный кабинет на cheese-cake.ru</li>
+            <li>Скопируйте из раздела «Бонусы» персональную ссылку и пришлите её другу</li>
+            <li>Друг должен зайти по вашей ссылке, зарегистрироваться на сайте cheese-cake.ru и оформить заказ</li>
+            <li>
+                После получения заказа вам и вашему другу начисляется по 300 бонусов, которые можно использовать для
+                следующих заказов на сайте cheese-cake.ru
+            </li>
+
+        </ul>
+    </div>
+</div>
+{% endblock %}

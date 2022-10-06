@@ -1,8 +1,9 @@
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">{{ manager.last_name }} {{ manager.first_name }} {% if manager.last_name %}{{ manager.last_name }}{% endif %}</h5>
-        <img src="{{ managers.photo.url }}" alt="{{ manager.last_name }}" width="80" height="80">
-        <p class="card-text">{{ manager.function }}</p>
-        <p class="card-text">{{ manager.welcome_words }}</p>
-    </div>
+{% load static %}
+<div class="single-testimonial item">
+    <img class="mx-auto" src="{{manager.photo.url}}" alt="{{manager.last_name}}">
+    <p class="desc">
+        {{ manager.welcome_words }}
+    </p>
+    <h4>{{manager.last_name}} {{manager.first_name}} {{manager.patronymic}}</h4>
+    <h5>{{manager.function}}</h5>
 </div>

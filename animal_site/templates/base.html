@@ -43,10 +43,9 @@
 				  </div>
 				  <nav id="nav-menu-container">
 					<ul class="nav-menu">
-					  <li><a href="#">Прайс лист</a></li>
+					  <li><a href="./static/Памятка_по_противодействию_коррупции.pdf" target="blank">Прайс лист</a></li>
 					  <li><a href="{% url 'animals_list_url' %}">Каталог анкет</a></li>
 					  <li><a href="{% url 'animals_list_url' %}">Галерея</a></li>
-						<li><a href="{% url 'contact_url' %}">Контакты</a></li>
 					</ul>
 				  </nav><!-- #nav-menu-container -->
 				</div>
@@ -78,15 +77,19 @@
 				<div class="row pt-120 pb-80">
 					<div class="col-lg-3 col-md-6">
 						<div class="single-footer-widget">
-							<h6>О нас</h6>
-							<p>
-								Тут узнаешь, какие мы ахуенные на самом деле!
-							</p>
+							<a href="{% url 'managers_list_url' %}">
+								<h6>О нас</h6>
+								<p>
+									Тут узнаешь, какие мы ахуенные на самом деле!
+								</p>
+							</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-footer-widget text-center">
-							<h6>FAQ</h6>
+							<a href="{% url 'faq_page_url' %}">
+								<h6>FAQ</h6>
+							</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
@@ -96,42 +99,44 @@
 					</div>
 					<div class="col-lg-3  col-md-6">
 						<div class="single-footer-widget mail-chimp text-center">
-							<h6 class="mb-20">Контакты</h6>
-							<ul class="list-contact">
-								<li class="flex-row d-flex">
-									<div class="icon">
-										<span class="lnr lnr-home"></span>
-									</div>
-									<div class="detail">
-										<h4>Россия, Санкт-Петербург</h4>
-										<p>
-											Невский проспект, дом 85
-										</p>
-									</div>
-								</li>
-								<li class="flex-row d-flex">
-									<div class="icon">
-										<span class="lnr lnr-phone-handset"></span>
-									</div>
-									<div class="detail">
-										<h4>8 800 555 35 35</h4>
-										<p>
-											Пн-Пт с 9 до 18
-										</p>
-									</div>
-								</li>
-								<li class="flex-row d-flex">
-									<div class="icon">
-										<span class="lnr lnr-envelope"></span>
-									</div>
-									<div class="detail">
-										<h4>support@animalagency.com</h4>
-										<p>
-											Пишите в любое время!
-										</p>
-									</div>
-								</li>
-							</ul>
+							<a href="{% url 'contact_url' %}">
+								<h6 class="mb-20">Контакты</h6>
+								<ul class="list-contact">
+									<li class="flex-row d-flex">
+										<div class="icon">
+											<span class="lnr lnr-home"></span>
+										</div>
+										<div class="detail">
+											<h4>Россия, Санкт-Петербург</h4>
+											<p>
+												Невский проспект, дом 85
+											</p>
+										</div>
+									</li>
+									<li class="flex-row d-flex">
+										<div class="icon">
+											<span class="lnr lnr-phone-handset"></span>
+										</div>
+										<div class="detail">
+											<h4>8 800 555 35 35</h4>
+											<p>
+												Пн-Пт с 9 до 18
+											</p>
+										</div>
+									</li>
+									<li class="flex-row d-flex">
+										<div class="icon">
+											<span class="lnr lnr-envelope"></span>
+										</div>
+										<div class="detail">
+											<h4>support@animalagency.com</h4>
+											<p>
+												Пишите нам в любое время!
+											</p>
+										</div>
+									</li>
+								</ul>
+							</a>
 						</div>
 					</div>
 				</div>
