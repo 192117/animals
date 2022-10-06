@@ -3,6 +3,16 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Customer(models.Model):
+    CHOICES = (
+        ('Breeder', 'Заводчик'),
+        ('Client', 'Клиент'),
+    )
+    role = models.CharField(
+        verbose_name='Тип клиента',
+        choices=CHOICES,
+        default='Breeder',
+        max_length=35
+    )
     last_name = models.CharField(
         verbose_name="Фамилия",
         help_text="Введите фамилию",
@@ -34,7 +44,11 @@ class Customer(models.Model):
         null=True,
         blank=True,
     )
-
+    photo_client = models.FileField(
+        verbose_name='Фото клиента',
+        help_text='Загрузите свое фото',
+        upload_to='image_clients/',
+    )
     class Meta:
         verbose_name = "Клиент"
         verbose_name_plural = "Клиенты"

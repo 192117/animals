@@ -34,6 +34,11 @@ class OrderPhoto(models.Model):
         help_text="Введите ваше имя",
         max_length=30,
     )
+    photo_client = models.FileField(
+        verbose_name='Фото клиента',
+        help_text='Загрузите свое фото',
+        upload_to='image_clients/',
+    )
     body = models.TextField(
         verbose_name="Описание заявки",
         help_text="Введите ваше пожелание",

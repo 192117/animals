@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Вступление в клуб
+    Заявка на вступление в клуб
 {% endblock %}
 
 {% block article %}
     <h1 class="text-uppercase">
-		Заявка на вступление в наш клуб
+		Заявка на вступление в клуб
 	</h1>
 {% endblock %}
-
 
 {% block content %}
     <!-- Start Model-form Area -->
@@ -26,10 +25,10 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <form action="{% url 'photo_create_url' %}" method="post">
+                <form action="{% url 'model_create_url' %}" method="post">
                     {% csrf_token %}
-                    {% for field in form %}
-                        <div class="mb-3">
+                    {% for field in bound_form %}
+                        <div class="mb-1">
                             {% if field.errors %}
                                 <div class="alert alert-danger">
                                     {{ field.errors }}

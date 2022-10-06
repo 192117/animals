@@ -7,7 +7,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = OrderPhoto
-        fields = ['email', 'phone_number', 'last_name', 'first_name', 'body']
+        fields = ['email', 'phone_number', 'last_name', 'first_name', 'body', 'photo_client']
         exclude = ('status',)
 
         widgets = {
@@ -16,6 +16,7 @@ class OrderForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'photo_client': forms.FileInput()
         }
 
 
@@ -23,8 +24,7 @@ class ModelForm(forms.ModelForm):
 
     class Meta:
         model = AddModelAnimal
-        fields = ['email', 'phone_number', 'last_name', 'first_name', 'pets_name',
-                  'weight', 'height', 'color', 'descriptions', 'photo']
+        fields = ['email', 'phone_number', 'last_name', 'first_name', 'pets_name', 'weight', 'height', 'color', 'descriptions', 'photo']
         exclude = ('status',)
 
         widgets = {

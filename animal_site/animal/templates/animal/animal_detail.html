@@ -18,6 +18,12 @@
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <div class="single-post row">
+                        <div class="single-sidebar-widget user-info-widget">
+                            <img src="{{ animal.photo.url }}" alt="{{ animal.pets_name }}">
+                            <p>
+                                {{animal.pets_name}}
+                            </p>
+                        </div>
                         <div class="col-lg-3  col-md-3 meta-details">
                             <div class="user-details row">
                                 <p class="user-name col-lg-12 col-md-12 col-6"><a>Окрас: {{animal.color}}</a></p>
@@ -30,12 +36,6 @@
                             <a class="posts-title" href="#"><h3>Описание</h3></a>
                             <p class="excert">
                                 {{animal.descriptions}}
-                            </p>
-                        </div>
-                        <div class="single-sidebar-widget user-info-widget">
-                            <img src="{{ animal.photo.url }}" alt="{{ animal.pets_name }}">
-                            <p>
-                                {{animal.pets_name}}
                             </p>
                         </div>
                     </div>

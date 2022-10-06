@@ -1,0 +1,8 @@
+{% load static %}
+<div class="single-testimonial item">
+    <img class="mx-auto" src="{{client.photo_client.url}}" alt="{{client.last_name}}">
+    <p class="desc">
+        {{ client.review }}
+    </p>
+    <h4>{{client.last_name}} {{client.first_name}} {{client.patronymic}}</h4>
+</div>
