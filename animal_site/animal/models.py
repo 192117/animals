@@ -4,7 +4,31 @@ from animal_site.utils import translite
 from clients.models import Customer
 import random
 
+class Category(models.Model):
+    name = models.CharField(
+        verbose_name="Наименование категории",
+        help_text="Введите наименование категории",
+        max_length=100,
+    )
+    photo = models.FileField(
+        verbose_name='Фото категории',
+        help_text='Загрузите фото категории',
+        upload_to='agency/',
+    )
+
+    class Meta:
+        verbose_name = "Категория животного"
+        verbose_name_plural = "Категории животного"
+
+        def __str__(self):
+            return f'{self.name}'
+
 class Animals(models.Model):
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
+        related_name='animals',
+    )
     pets_name = models.CharField(
         verbose_name="Кличка питомца",
         help_text="Введите кличку питомца",

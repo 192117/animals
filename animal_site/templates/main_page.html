@@ -50,19 +50,11 @@
 	<!-- Start home-about Area -->
 	<section class="home-about-area">
 		<div class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-lg-6 home-about-left no-padding">
-					<img src="{% static 'page/img/about-img.jpg' %}" alt="">
-				</div>
-				<div class="col-lg-6 home-about-right no-padding">
-					<h1>
-						О том, как проходят сьемки для животного
-					</h1>
-					<h5>Сейчас расскажем о процессе</h5>
-					<p>
-						Процесс описан тут
-					</p>
-					<a href="#" class="primary-btn text-uppercase">Подробнее</a>
+			<div class="row">
+				<div class="active-carusel">
+					{% for new in news %}
+						{% include 'news/includes/news_info.html' %}
+					{% endfor %}
 				</div>
 			</div>
 		</div>

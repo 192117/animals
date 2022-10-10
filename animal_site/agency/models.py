@@ -1,8 +1,8 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from animal.models import Animals
 
-
-class OrderPhoto(models.Model):
+class OrderAnimal(models.Model):
     CHOICES = (
         ('Success', 'Выполнено'),
         ('Confirmation', 'Подтверждение'),
@@ -34,14 +34,19 @@ class OrderPhoto(models.Model):
         help_text="Введите ваше имя",
         max_length=30,
     )
-    photo_client = models.FileField(
-        verbose_name='Фото клиента',
-        help_text='Загрузите свое фото',
-        upload_to='image_clients/',
+    animal = models.ForeignKey(
+        Animals,
+        verbose_name="Выбранное животное",
+        help_text="Выберите животное из списка. В случае отсутствия необходимого животного, оставьте поле пустое.",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
     )
     body = models.TextField(
-        verbose_name="Описание заявки",
-        help_text="Введите ваше пожелание",
+        verbose_name="Описание животного",
+        help_text="Введите ваше пожелание, если не получилось выбрать животного из списка имеющихся.",
+        blank=True,
+        null=True
     )
     class Meta:
         verbose_name = "Заявка на фотосессию"

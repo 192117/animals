@@ -1,5 +1,3 @@
-from django.template import RequestContext
-
 from .forms import OrderForm, ModelForm
 from django.shortcuts import render, redirect
 

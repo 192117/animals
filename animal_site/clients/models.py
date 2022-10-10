@@ -3,16 +3,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Customer(models.Model):
-    CHOICES = (
-        ('Breeder', 'Заводчик'),
-        ('Client', 'Клиент'),
-    )
-    role = models.CharField(
-        verbose_name='Тип клиента',
-        choices=CHOICES,
-        default='Breeder',
-        max_length=35
-    )
     last_name = models.CharField(
         verbose_name="Фамилия",
         help_text="Введите фамилию",

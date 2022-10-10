@@ -1,24 +1,19 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
-from .models import Animals
+from .models import Category, Animals
 
-
-def list_animals(request):
-    animals = Animals.objects.all()
-    return render(request, 'animal/animals.html', context={'animals': animals})
+def list_category_animals(request):
+    category = Category.objects.all()
+    return render(request, 'animal/category.html', context={'category': category})
 
 def animal_detail(request, slug):
     animal = Animals.objects.get(slug=slug)
     return render(request, 'animal/animal_detail.html', context={'animal': animal})
 
+def list_category(request, cat):
+    id = Category.objects.get(name=cat)
+    animal = Animals.objects.filter(category=id)
+    return render(request, 'animal/animals.html', context={'animal': animal, 'cat': cat})
 
-def animal_rate(request):
-    print(request.POST)
-    animal = Animals.objects.get(slug=request.POST['slug'])
-    if request.POST['value'] == '+':
-        animal.rate += 1
-    elif request.POST['value'] =='-':
-        if animal.rate > 0:
-            animal.rate -= 1
-    animal.save()
-    # return render(request, 'animal/animal_detail.html', context={'animal': animal})
+def list_animals(request,):
+    animal = Animals.objects.all()
+    return render(request, 'animal/animals.html', context={'animal': animal})

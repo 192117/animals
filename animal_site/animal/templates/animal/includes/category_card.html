@@ -1,0 +1,11 @@
+{% load static %}
+<div class="col-lg-3 col-md-6">
+    <div class="single-cat-list">
+        <a href="{% url 'animals_category_url' categ.name %}">
+            <img src="{{categ.photo.url}}" alt="{{categ.name}}" class="img-fluid">
+                <div class="overlay">
+            <div class="text">{{categ.name}}</div>
+                </div>
+        </a>
+    </div>
+</div>
