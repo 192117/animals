@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from animal_site.utils import translite
 
 
 class News(models.Model):
@@ -9,42 +10,48 @@ class News(models.Model):
         archived = 3, 'В архиве'
 
     title = models.CharField(
-        verbose_name="Название",
-        help_text="Введите заголовок новости",
+        verbose_name='Название',
+        help_text='Введите заголовок новости',
         max_length=255,
+        unique=True
     )
     text = models.TextField(
         verbose_name='Текст новости',
-        help_text="Введите текст новости",
+        help_text='Введите текст новости',
     )
     status = models.PositiveSmallIntegerField(
-        verbose_name="Статус",
-        help_text="Введите ",
+        verbose_name='Статус',
+        help_text='Введите ',
         choices=Status.choices,
         default=Status.created,
     )
     image = models.ImageField(
-        verbose_name="Картинка",
-        help_text="Загрузите картинку новости",
+        verbose_name='Картинка',
+        help_text='Загрузите картинку новости',
         upload_to='news_images/',
         null=True,
         blank=True,
         default=None,
     )
     created = models.DateField(
-        verbose_name="Дата создания",
+        verbose_name='Дата создания',
     )
     updated = models.DateField(
-        verbose_name="Дата последнего обновления",
+        verbose_name='Дата последнего обновления',
         default=None,
         null=True,
         blank=True,
+    )
+    slug = models.SlugField(
+        max_length=150,
+        blank=True
     )
 
     def save(self, *args, **kwargs):
         if not self.id:
             self.created = datetime.date.today()
         self.updated = datetime.date.today()
+        self.slug = translite(self.title)
         return super().save(*args, **kwargs)
 
     class Meta:

@@ -1,6 +1,6 @@
 from django import forms
 from .models import OrderAnimal, AddModelAnimal
-from animal.models import Animals
+from animal.models import Animals, Category
 
 
 
@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = OrderAnimal
-        fields = ['email', 'phone_number', 'last_name', 'first_name', 'animal', 'body',]
+        fields = ['email', 'phone_number', 'last_name', 'first_name', 'animal', 'category', 'body',]
         exclude = ('status',)
 
         widgets = {
@@ -17,9 +17,9 @@ class OrderForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
-            # 'animal': forms.ModelChoiceField(queryset=Animals.objects.all()),
         }
         animal: forms.ModelChoiceField(queryset=Animals.objects.all())
+        category: forms.ModelChoiceField(queryset=Category.objects.all())
 
 class ModelForm(forms.ModelForm):
 

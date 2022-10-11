@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block article %}
-	<h1 class="text-uppercase">
+<h1 class="text-uppercase" xmlns="http://www.w3.org/1999/html">
 		Animal Agency
 	</h1>
 	<p class="text-white sub-head">
@@ -47,19 +47,24 @@
 	<!-- End callto-top Area -->
 
 
-	<!-- Start home-about Area -->
-	<section class="home-about-area">
-		<div class="container-fluid">
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-60 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Новости</h1>
+					</div>
+				</div>
+			</div>
 			<div class="row">
-				<div class="active-carusel">
+				<div class="active-testimonial-carusel">
 					{% for new in news %}
-						{% include 'news/includes/news_info.html' %}
+						{% include 'news/includes/news_card.html' %}
 					{% endfor %}
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- End home-about Area -->
 
 
 	<!-- Start process Area -->

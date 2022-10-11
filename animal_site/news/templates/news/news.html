@@ -13,11 +13,11 @@
 {% endblock %}
 
 {% block content %}
-	<!-- Start process Area -->
-	<section class="process-area section-gap">
-		{% for new in news %}
-			{% include 'news/includes/news_card.html' %}
-		{% endfor %}
+	<section class="testomial-area section-gap" id="testimonail">
+		<div class="container">
+			{% for new in news %}
+				{% include 'news/includes/news_info.html' %}
+			{% endfor %}
+		</div>
 	</section>
-	<!-- End process Area -->
 {% endblock %}

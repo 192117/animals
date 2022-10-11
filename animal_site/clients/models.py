@@ -23,10 +23,12 @@ class Customer(models.Model):
     phone_number = PhoneNumberField(
         verbose_name="Мобильный телефон клиента",
         help_text="Введите ваш мобильный телефон для связи",
+        unique=True
     )
     email = models.EmailField(
         verbose_name='Электронная почта клиента',
         help_text="Введите вашу почту для заявки",
+        unique=True
     )
     review = models.TextField(
         verbose_name='Отзыв',

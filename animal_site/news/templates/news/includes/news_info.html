@@ -1,10 +1,12 @@
 {% load static %}
-<div class="single-carusel">
-    <h1>
+<div class="single-testimonial item" xmlns="http://www.w3.org/1999/html">
+    <a href="{% url 'news_detail_url' new.slug %}">
+        <img class="mx-auto" src="{{new.image.url}}" alt="{{new.title}}">
+    </a>
+    <p class="desc">
         {{new.title}}
-    </h1>
-    <h5>{{new.updated}}</h5>
-    <p>
-        {{new.text}}
     </p>
+    <h5>
+        {{new.text|truncatewords:10}}
+    </h5>
 </div>
