@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Модели
+    FAQ
 {% endblock %}
 
 {% block price %}
@@ -9,25 +9,25 @@
 {% endblock %}
 
 {% block article %}
-    <h1 class="text-uppercase">
-		Наши питомцы
-	</h1>
+<h1 class="text-uppercase">
+    FAQ
+</h1>
 {% endblock %}
 
 {% block content %}
-    <!-- Start animal-list Area -->
-    <section class="cat-list-area section-gap">
-        <div class="container">
-            <div class="row">
-                {% for categ in category %}
-                    {% include 'category/includes/category_card.html' %}
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <!-- End animal-list Area -->
+    {% for answer in answers %}
+        {% include 'info/includes/faq_card.html' %}
+    {% endfor %}
+    <br>
+    <br>
 {% endblock %}
 
+{% block about_footer %}
+	<h6>О нас</h6>
+	<p>
+		{{info.about_footer}}
+	</p>
+{% endblock %}
 
 {% block social %}
 	<div class="col-lg-4 col-sm-6 footer-social">

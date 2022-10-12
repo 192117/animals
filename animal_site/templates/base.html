@@ -1,176 +1,182 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru" class="no-js">
-<head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon-->
-	<link rel="shortcut icon" href="{% static 'page/img/banner-bg.jpg' %}">
-	<!-- Author Meta -->
-	<meta name="author" content="codepixer">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<title>
-        {% block title %}
-            Animal Agency
+    <head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="{% static 'page/img/banner-bg.jpg' %}">
+        <!-- Author Meta -->
+        <meta name="author" content="codepixer">
+        <!-- Meta Description -->
+        <meta name="description" content="">
+        <!-- Meta Keyword -->
+        <meta name="keywords" content="">
+        <!-- meta character set -->
+        <meta charset="UTF-8">
+        <!-- Site Title -->
+        <title>
+            {% block title %}
+                Animal Agency
+            {% endblock %}
+        </title>
+
+        <link href="{% static 'page/css/main.css' %}" rel="stylesheet">
+            <!--
+            CSS
+            ============================================= -->
+            <link rel="stylesheet" href="{% static 'page/css/linearicons.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/font-awesome.min.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/bootstrap.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/owl.carousel.css' %}">
+            <link rel="stylesheet" href="{% static 'page/css/main.css' %}">
+    </head>
+    <body>
+        <header id="header" id="home">
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                    <div id="logo">
+                        <a href="{% url 'main_page_url' %}"><img src="{% static 'page/img/logoo.png' %}" alt="" title="" /></a>
+                    </div>
+                    <nav id="nav-menu-container">
+                        <ul class="nav-menu">
+                            {% block price %}
+                                <li><a href="#" target="blank">Прайс лист</a></li>
+                            {% endblock %}
+                            <li><a href="{% url 'category_list_url' %}">Каталог анкет</a></li>
+                            <li><a href="{% url 'animals_url' %}">Галерея</a></li>
+                            <li><a href="{% url 'news_page_url' %}">Новости</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header><!-- #header -->
+
+        <!-- start banner Area -->
+        <section class="banner-area relative" id="home">
+            <div class="container">
+                <div class="overlay overlay-bg"></div>
+                    <div class="row fullscreen d-flex align-items-center justify-content-start">
+                        <div class="banner-content col-lg-8 col-md-12">
+                            {% block article %}
+                                NO ARTICLE
+                            {% endblock %}
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+
+        {% block content %}
+        NO CONTENT
         {% endblock %}
-	</title>
 
-	<link href="{% static 'page/css/main.css' %}" rel="stylesheet">
-		<!--
-		CSS
-		============================================= -->
-		<link rel="stylesheet" href="{% static 'page/css/linearicons.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/bootstrap.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/magnific-popup.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/nice-select.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/animate.min.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/owl.carousel.css' %}">
-		<link rel="stylesheet" href="{% static 'page/css/main.css' %}">
-	</head>
-	<body>
-		  <header id="header" id="home">
-			<div class="container main-menu">
-				<div class="row align-items-center justify-content-between d-flex">
-				  <div id="logo">
-					<a href="{% url 'main_page_url' %}"><img src="{% static 'page/img/logoo.png' %}" alt="" title="" /></a>
-				  </div>
-				  <nav id="nav-menu-container">
-					<ul class="nav-menu">
-						<li><a href="./static/tet.pdf" target="blank">Прайс лист</a></li>
-						<li><a href="{% url 'category_list_url' %}">Каталог анкет</a></li>
-						<li><a href="{% url 'animals_url' %}">Галерея</a></li>
-						<li><a href="{% url 'news_page_url' %}">Новости</a></li>
-					</ul>
-				  </nav><!-- #nav-menu-container -->
-				</div>
-			</div>
-		  </header><!-- #header -->
+        <!-- start footer Area -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row pt-120 pb-80">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <a href="{% url 'managers_list_url' %}">
+                                {% block about_footer %}
+                                    <h6>О нас</h6>
+                                    <p>
+                                        Тут узнаешь, какие мы ахуенные на самом деле!
+                                    </p>
+                                {% endblock %}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget text-center">
+                            <a href="{% url 'faq_page_url' %}">
+                                <h6>FAQ</h6>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget ">
+                            <h6>Политика конфиденциальности</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-6">
+                        <div class="single-footer-widget mail-chimp text-center">
+                            <a href="{% url 'contact_url' %}">
+                                <h6 class="mb-20">Контакты</h6>
+                                <ul class="list-contact">
+                                    <li class="flex-row d-flex">
+                                        <div class="icon">
+                                            <span class="lnr lnr-home"></span>
+                                        </div>
+                                        <div class="detail">
+                                            <h4>Россия, Санкт-Петербург</h4>
+                                            <p>
+                                                Невский проспект, дом 85
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row d-flex">
+                                        <div class="icon">
+                                            <span class="lnr lnr-phone-handset"></span>
+                                        </div>
+                                        <div class="detail">
+                                            <h4>8 800 555 35 35</h4>
+                                            <p>
+                                                Пн-Пт с 9 до 18
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row d-flex">
+                                        <div class="icon">
+                                            <span class="lnr lnr-envelope"></span>
+                                        </div>
+                                        <div class="detail">
+                                            <h4>support@animalagency.com</h4>
+                                            <p>
+                                                Пишите нам в любое время!
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <div class="container">
+                    <div class="row footer-bottom d-flex justify-content-between">
+                        <p class="col-lg-8 col-sm-6 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> AgencyAnimal</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        {% block social %}
+                            <div class="col-lg-4 col-sm-6 footer-social">
+                                <a href="#"><i class="fa fa-telegram"></i></a>
+                                <a href="#"><i class="fa fa-vk"></i></a>
+                                <a href="#"><i class="fa fa-whatsapp"></i></a>
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer Area -->
 
-		<!-- start banner Area -->
-		<section class="banner-area relative" id="home">
-		<div class="container">
-			<div class="overlay overlay-bg"></div>
-			<div class="row fullscreen d-flex align-items-center justify-content-start">
-				<div class="banner-content col-lg-8 col-md-12">
-					{% block article %}
-						NO ARTICLE
-					{% endblock %}
-				</div>
-			</div>
-		</div>
-		</section>
-		<!-- End banner Area -->
-
-		{% block content %}
-            NO CONTENT
-        {% endblock %}
-
-		<!-- start footer Area -->
-		<footer class="footer-area">
-			<div class="container">
-				<div class="row pt-120 pb-80">
-					<div class="col-lg-3 col-md-6">
-						<div class="single-footer-widget">
-							<a href="{% url 'managers_list_url' %}">
-								<h6>О нас</h6>
-								<p>
-									Тут узнаешь, какие мы ахуенные на самом деле!
-								</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="single-footer-widget text-center">
-							<a href="{% url 'faq_page_url' %}">
-								<h6>FAQ</h6>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="single-footer-widget ">
-							<h6>Политика конфиденциальности</h6>
-						</div>
-					</div>
-					<div class="col-lg-3  col-md-6">
-						<div class="single-footer-widget mail-chimp text-center">
-							<a href="{% url 'contact_url' %}">
-								<h6 class="mb-20">Контакты</h6>
-								<ul class="list-contact">
-									<li class="flex-row d-flex">
-										<div class="icon">
-											<span class="lnr lnr-home"></span>
-										</div>
-										<div class="detail">
-											<h4>Россия, Санкт-Петербург</h4>
-											<p>
-												Невский проспект, дом 85
-											</p>
-										</div>
-									</li>
-									<li class="flex-row d-flex">
-										<div class="icon">
-											<span class="lnr lnr-phone-handset"></span>
-										</div>
-										<div class="detail">
-											<h4>8 800 555 35 35</h4>
-											<p>
-												Пн-Пт с 9 до 18
-											</p>
-										</div>
-									</li>
-									<li class="flex-row d-flex">
-										<div class="icon">
-											<span class="lnr lnr-envelope"></span>
-										</div>
-										<div class="detail">
-											<h4>support@animalagency.com</h4>
-											<p>
-												Пишите нам в любое время!
-											</p>
-										</div>
-									</li>
-								</ul>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="copyright-text">
-				<div class="container">
-					<div class="row footer-bottom d-flex justify-content-between">
-						<p class="col-lg-8 col-sm-6 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> AgencyAnimal</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-						<div class="col-lg-4 col-sm-6 footer-social">
-							<a href="https://t.me/ne_boyan_a_classika"><i class="fa fa-telegram"></i></a>
-							<a href="https://vk.com/vandrouki_tours"><i class="fa fa-vk"></i></a>
-							<a href="#"><i class="fa fa-whatsapp"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- End footer Area -->
-
-		<script src="{% static 'page/js/vendor/jquery-2.2.4.min.js' %}"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="{% static 'page/js/vendor/bootstrap.min.js' %}"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-		<script src="{% static 'page/js/easing.min.js' %}"></script>
-		<script src="{% static 'page/js/hoverIntent.js' %}"></script>
-		<script src="{% static 'page/js/superfish.min.js' %}"></script>
-		<script src="{% static 'page/js/jquery.ajaxchimp.min.js' %}"></script>
-		<script src="{% static 'page/js/jquery.magnific-popup.min.js' %}"></script>
-		<script src="{% static 'page/js/owl.carousel.min.js' %}"></script>
-		<script src="{% static 'page/js/jquery.nice-select.min.js' %}"></script>
-		<script src="{% static 'page/js/mail-script.js' %}"></script>
-		<script src="{% static 'page/js/main.js' %}"></script>
-	</body>
+        <script src="{% static 'page/js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="{% static 'page/js/vendor/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="{% static 'page/js/easing.min.js' %}"></script>
+        <script src="{% static 'page/js/hoverIntent.js' %}"></script>
+        <script src="{% static 'page/js/superfish.min.js' %}"></script>
+        <script src="{% static 'page/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'page/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'page/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'page/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'page/js/mail-script.js' %}"></script>
+        <script src="{% static 'page/js/main.js' %}"></script>
+        </body>
 </html>

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .settings import MEDIA_ROOT, MEDIA_URL, STATIC_URL
-from .views import main_page, faq_view
+from .views import main_page
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -26,7 +26,7 @@ urlpatterns = [
     path('agency/', include('agency.urls')),
     path('animals/', include('animal.urls')),
     path('managers/', include('managers.urls')),
-    path('faq/', faq_view, name='faq_page_url'),
+    path('faq/', include('info.urls')),
     path('staff/', include('users.urls')),
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT) + static(STATIC_URL)

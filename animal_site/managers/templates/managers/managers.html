@@ -4,6 +4,10 @@
     О компании
 {% endblock %}
 
+{% block price %}
+	<li><a href="{{price.price_pdf.url}}" target="blank">Прайс лист</a></li>
+{% endblock %}
+
 {% block article %}
     <h1 class="text-uppercase">
 		О компании
@@ -18,14 +22,7 @@
 				<div class="menu-content pb-60 col-lg-8">
 					<div class="title text-center">
 						<h1 class="mb-10">История компании</h1>
-						<p>Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-							Краткая история компании Краткая история компании Краткая история компании Краткая история компании
-						</p>
-
+						<p>{{info.about_body}}</p>
 					</div>
 				</div>
 			</div>
@@ -76,4 +73,19 @@
 		</div>
 	</section>
 	<!-- End clients Area -->
+{% endblock %}
+
+{% block about_footer %}
+	<h6>О нас</h6>
+	<p>
+		{{info.about_footer}}
+	</p>
+{% endblock %}
+
+{% block social %}
+	<div class="col-lg-4 col-sm-6 footer-social">
+		<a href="{{social.telegram}}"><i class="fa fa-telegram"></i></a>
+		<a href="{{social.vk}}"><i class="fa fa-vk"></i></a>
+		<a href="{{social.whatsapp}}"><i class="fa fa-whatsapp"></i></a>
+	</div>
 {% endblock %}

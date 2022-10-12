@@ -6,12 +6,17 @@
     Animal Agency
 {% endblock %}
 
+{% block price %}
+	<li><a href="{{price.price_pdf.url}}" target="blank">Прайс лист</a></li>
+{% endblock %}
+
+
 {% block article %}
 <h1 class="text-uppercase" xmlns="http://www.w3.org/1999/html">
 		Animal Agency
 	</h1>
 	<p class="text-white sub-head">
-		Мы лучшее агентство в своей категории.
+		{{info.about_article}}
 	</p>
 {% endblock %}
 
@@ -171,4 +176,19 @@
 		</div>
 	</section>
 	<!-- End calltoaction Area -->
+{% endblock %}
+
+{% block about_footer %}
+	<h6>О нас</h6>
+	<p>
+		{{info.about_footer}}
+	</p>
+{% endblock %}
+
+{% block social %}
+	<div class="col-lg-4 col-sm-6 footer-social">
+		<a href="{{social.telegram}}"><i class="fa fa-telegram"></i></a>
+		<a href="{{social.vk}}"><i class="fa fa-vk"></i></a>
+		<a href="{{social.whatsapp}}"><i class="fa fa-whatsapp"></i></a>
+	</div>
 {% endblock %}
