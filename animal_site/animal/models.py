@@ -20,8 +20,8 @@ class Category(models.Model):
         verbose_name = "Категория животного"
         verbose_name_plural = "Категории животного"
 
-        def __str__(self):
-            return f'{self.name}'
+    def __str__(self):
+        return f'{self.name}'
 
 class Animals(models.Model):
     category = models.ForeignKey(

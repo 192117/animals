@@ -21,19 +21,19 @@
                         <div class="single-sidebar-widget user-info-widget">
                             <img src="{{ news.image.url }}" alt="{{ news.title }}">
                             <p>
+                                <br>
                                 {{news.title}}
                             </p>
                         </div>
-                        <div class="col-lg-3  col-md-3 meta-details">
+                        <div class="col-lg-6  col-md-6 meta-details">
                             <div class="user-details row">
                                 <p class="user-name col-lg-12 col-md-12 col-6"><a>Дата создания: {{news.created}}</a></p>
                                 <p class="date col-lg-12 col-md-12 col-6"><a>Дата изменения: {{news.updated}}</a></p>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
-                            <a class="posts-title"><h3>Описание</h3></a>
                             <p class="excert">
-                                {{news.title}}
+                                {{news.text}}
                             </p>
                         </div>
                     </div>

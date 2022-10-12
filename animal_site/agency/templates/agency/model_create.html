@@ -39,7 +39,25 @@
                         </div>
                     {% endfor %}
                     <button type="submit" class="primary-btn float-right">Отправить заявку на вступление в клуб</button>
+                <button type="button" class="primary-btn float-right" data-toggle="modal" data-target="#exampleModal">Закрыть форму заявки</button>
                 </form>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Подтверждение отмены</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Вы действительно хотите закрыть форму?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{% url 'main_page_url' %}" role="button" class="primary-btn float-right" data-bs-dismiss="modal">Закрыть</a>
+                        <a href="{% url 'model_create_url' %}" role="button" class="primary-btn float-right">Вернуться к форме</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

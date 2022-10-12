@@ -27,5 +27,6 @@ urlpatterns = [
     path('animals/', include('animal.urls')),
     path('managers/', include('managers.urls')),
     path('faq/', faq_view, name='faq_page_url'),
+    path('staff/', include('users.urls')),
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT) + static(STATIC_URL)
