@@ -23,8 +23,8 @@ services:
       - POSTGRES_PASSWORD=q123456
       - POSTGRES_DB=animal
       - POSTGRES_PORT=5432
-    ports:
-      - '5432:5432'
+    expose:
+      - '5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
