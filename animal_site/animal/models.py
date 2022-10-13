@@ -78,7 +78,7 @@ class Animals(models.Model):
         verbose_name_plural = "Питомцы клуба"
 
     def __str__(self):
-        return f'{self.pets_name}'
+        return f'{self.category}:{self.pets_name}'
 
     def save(self, *args, **kwargs):
         while True:

@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = OrderAnimal
-        fields = ['email', 'phone_number', 'last_name', 'first_name', 'animal', 'category', 'body',]
+        fields = ['email', 'phone_number', 'last_name', 'first_name', 'animal', 'body',]
         exclude = ('status',)
 
         widgets = {
@@ -19,7 +19,6 @@ class OrderForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
         animal: forms.ModelChoiceField(queryset=Animals.objects.all())
-        category: forms.ModelChoiceField(queryset=Category.objects.all())
 
 class ModelForm(forms.ModelForm):
 
@@ -38,5 +37,5 @@ class ModelForm(forms.ModelForm):
             'weight': forms.NumberInput(attrs={'class': 'form-control'}),
             'height': forms.NumberInput(attrs={'class': 'form-control'}),
             'descriptions': forms.Textarea(attrs={'class': 'form-control'}),
-            'photo': forms.FileInput(),
+            'photo': forms.FileInput(attrs={'class': 'form-control'}),
         }

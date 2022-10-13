@@ -43,15 +43,6 @@ class OrderAnimal(models.Model):
         blank=True,
         null=True
     )
-    category = models.ForeignKey(
-        Category,
-        verbose_name='Выбранная категория',
-        help_text='''Выберите категорию из списка. Если не выбрали животное, в случае отсутствия необходимой категории, 
-        оставьте поле пустое и переходите к описанию животного, которое вы бы хотели''',
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True
-    )
     body = models.TextField(
         verbose_name='Описание животного',
         help_text='Введите ваше пожелание, если не получилось выбрать животного из списка имеющихся.',
