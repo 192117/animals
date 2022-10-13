@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -90,8 +90,12 @@ AUTH_USER_MODEL = 'users.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINE'),
-        'NAME': BASE_DIR / os.getenv('NAME'),
+        'ENGINE': os.environ.get('ENGINE_DB'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DB_PORT', 5432),
     }
 }
 
